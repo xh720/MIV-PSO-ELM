@@ -181,25 +181,25 @@ def calculate_miv(model, X, y, perturbation_ratio=0.1):
 
     return mivs
 
-    data = pd.read_excel('dbn.xlsx')
-    input_data = data.iloc[:, :-1].values
-    output_data = data.iloc[:, -1].values.reshape(-1, 1)
-    # 归一化
-    # ss_X = StandardScaler().fit(input_data)
-    # ss_y = StandardScaler().fit(output_data)
-    ss_X = MinMaxScaler(feature_range=(0, 1)).fit(input_data)
-    ss_y = MinMaxScaler(feature_range=(0, 1)).fit(output_data)
-    input_data = ss_X.transform(input_data)
-    output_data = ss_y.transform(output_data)
+    # data = pd.read_excel('dbn.xlsx')
+    # input_data = data.iloc[:, :-1].values
+    # output_data = data.iloc[:, -1].values.reshape(-1, 1)
+    # # 归一化
+    # # ss_X = StandardScaler().fit(input_data)
+    # # ss_y = StandardScaler().fit(output_data)
+    # ss_X = MinMaxScaler(feature_range=(0, 1)).fit(input_data)
+    # ss_y = MinMaxScaler(feature_range=(0, 1)).fit(output_data)
+    # input_data = ss_X.transform(input_data)
+    # output_data = ss_y.transform(output_data)
 
-    n = input_data.shape[0]
-    m = n - 100
-    # 划分训练集和测试集
-    # 注意Python的切片操作是左闭右开的
-    X_train = input_data[:m, :]  # 训练集数据
-    X_test = input_data[m:, :]  # 测试集数据
-    y_train = output_data[:m, :]  # 训练集标签
-    y_test = output_data[m:, :]  # 测试集标签
+    # n = input_data.shape[0]
+    # m = n - 100
+    # # 划分训练集和测试集
+    # # 注意Python的切片操作是左闭右开的
+    # X_train = input_data[:m, :]  # 训练集数据
+    # X_test = input_data[m:, :]  # 测试集数据
+    # y_train = output_data[:m, :]  # 训练集标签
+    # y_test = output_data[m:, :]  # 测试集标签
 
     # 加载数据
 data = pd.read_excel('F:\Python\python_program\pythonProject\A\数据集.xlsx')
